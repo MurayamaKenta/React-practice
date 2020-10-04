@@ -1,0 +1,77 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      //①繰り返し処理
+      //配列を使った繰り返し処理（いちばん単純、あまり使わない）
+
+      // let dom = document.getElementById('root');
+      // const list = {
+      //   fontSize: '20px',
+      //   padding: '5px 50px',
+      //   color: 'red'
+      // };
+
+      // //配列のため「,」必要
+      // let data = [<li>One</li>, <li>Two</li>, <li>Three</li>];
+
+      // let el = (
+      //   <div>
+      //     <ul style={list}>{data}</ul>
+      //   </div>
+      // );
+      // ReactDOM.render(el, dom);
+
+      //②map関数を使用
+      //他にもArray.〇〇の関数はあるが今回はmap
+
+      let dom = document.getElementById('root');
+      const table = {
+        fontSize: '20px',
+        padding: '5px 50px'
+      };
+      const th = {
+        color: 'red'
+      };
+      const td = {
+        color: 'blue'
+      };
+      let data = [
+        { name: 'Taro', age: 24 },
+        { name: 'Taro2', age: 56 },
+        { name: 'Taro3', age: 78 }
+      ];
+
+      let el = (
+        <div>
+          <table style={table}>
+            <tr>
+              <th style={th}>name</th>
+              <th style={th}>age</th>
+            </tr>
+
+            {data.map(value => (
+              <tr>
+                <td style={td}>{value.name}</td>
+                <td style={td}>{value.age}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      );
+
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
