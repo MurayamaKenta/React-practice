@@ -1,0 +1,42 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+    <!-- <div id="root" onclick="doCount();">wait...</div> -->
+    <!-- <script src="./script.js"></script> -->
+
+    <script type="text/babel">
+      let dom = document.getElementById('root');
+
+      let title = 'タイトル';
+      let msg = 'メッセージ';
+      let link = 'http://google.com';
+
+      const msg_s = {
+        fontSize: '20px',
+        color: 'red',
+        border: '1px solid blue'
+      };
+
+      let el = (
+        <div>
+          <h2 style={msg_s}>{title}</h2>
+          <p>
+            <a href={link}>{msg}</a>
+          </p>
+        </div>
+      );
+
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
