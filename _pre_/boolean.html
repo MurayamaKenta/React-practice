@@ -1,0 +1,59 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      let dom = document.getElementById('root');
+      let msg = 'msg表示します';
+
+      // ====================
+      // ①通常の真偽値での表示
+      // ====================
+      // const message = {
+      //   fontSize: '20px',
+      //   color: 'red'
+      // };
+
+      // let flg = true;//
+
+      // //true => 表示 , false =>非表示
+      // let el = <div>{flg && <p style={message}>{msg}</p>}</div>;
+      // ReactDOM.render(el, dom);
+
+      //======================
+      //②参考演算子で分岐
+      //======================
+      let msg_true = 'true_massage';
+      let msg_false = 'false_massage';
+
+      const message = {
+        fontSize: '20px',
+        color: 'red'
+      };
+
+      let flg = true; //
+
+      //true => 表示 , false =>非表示
+      let el = (
+        <div>
+          {flg ? (
+            <p style={message}>{msg_true}</p>
+          ) : (
+            <p style={message}>{msg_false}</p>
+          )}
+        </div>
+      );
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
