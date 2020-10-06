@@ -1,0 +1,90 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      // // classコンポーネント
+      // class クラス名{
+      //   constructor(props){
+      //     super(props);
+      //     // 初期化処理
+      //   }
+      //   // プロパティ,メソッド等
+      // }
+      let dom = document.getElementById('root');
+
+      const msg = {
+        fontSize: '20px',
+        color: 'red',
+      };
+
+      // class Hello extends React.Component {
+      //   constructor(props) {
+      //     super(props);
+      //   }
+      //   render() {
+      //     return <p style={msg}>Hello!!!!!!!!</p>;
+      //   }
+      // }
+
+      // let el = (
+      //   <div>
+      //     <Hello />
+      //   </div>
+      // );
+
+      // ======================
+      //属性を使用したクラスコンポーネント
+      // ======================
+
+      class Rect extends React.Component {
+        x = 0;
+        y = 0;
+        color = 'red';
+        style = {};
+
+        constructor(props) {
+          super(props);
+          this.name = props.name;
+          this.x = props.x;
+          this.y = props.y;
+          this.w = props.w;
+          this.h = props.h;
+          this.color = props.color;
+          this.style = {
+            position: 'absolute',
+            left: `${this.x}px`,
+            top: `${this.y}px`,
+            width: `${this.w}px`,
+            height: `${this.h}px`,
+            backgroundColor: this.color,
+            // backgroundColor: 'red',
+          };
+        }
+
+        render() {
+          return <div style={this.style}>{this.name}</div>;
+        }
+      }
+
+      let el = (
+        <div>
+          <Rect x="100" y="100" w="100" h="100" color="cyan" name="KENTA" />
+          <Rect x="150" y="150" w="100" h="100" color="magenta" name="KAZUKI" />
+        </div>
+      );
+
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
