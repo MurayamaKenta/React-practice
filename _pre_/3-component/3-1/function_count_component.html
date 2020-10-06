@@ -1,0 +1,46 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      let dom = document.getElementById('root');
+
+      const msg = {
+        fontSize: '20px',
+        color: 'red',
+      };
+
+      function CountButton(props) {
+        let count = 0;
+        for (let i = 0; i <= props.number; i++) {
+          count += i;
+        }
+        return (
+          <div style={props.style}>
+            1から{props.number}までの合計は{count}
+          </div>
+        );
+      }
+
+      let el = (
+        <div>
+          <CountButton style={msg} number="100" />
+          <CountButton style={msg} number="200" />
+          <CountButton style={msg} number="300" />
+        </div>
+      );
+
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
