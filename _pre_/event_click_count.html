@@ -1,0 +1,40 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      let dom = document.getElementById('root');
+
+      const p = {
+        fontSize: '20px',
+        padding: '10px',
+      };
+
+      let counter = 0;
+
+      // 仮装DOMで生成した要素にonClickの属性を渡してあげる
+      const click = () => {
+        counter++;
+        let el = (
+          <div>
+            <p onClick={click} style={p}>
+              count : {counter}
+            </p>
+          </div>
+        );
+        ReactDOM.render(el, dom);
+      };
+      click();
+    </script>
+  </body>
+</html>
