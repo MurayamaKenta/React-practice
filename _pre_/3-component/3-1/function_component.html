@@ -1,0 +1,71 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+    <script type="text/babel">
+      //コンポーネント定義方法
+      // function コンポーネント名(){
+      //   return JSX
+      // }
+      //コンポーネント使用方法
+      // <コンポーネント名></コンポーネント名>
+
+      // =====================
+      // コンポーネント
+      // =====================
+      let dom = document.getElementById('root');
+
+      // const msg = {
+      //   fontSize: '20px',
+      //   color: 'red',
+      // };
+
+      // //this is 関数コンポーネント
+      // function Welcome(props) {
+      //   return <p style={msg}>Hello React!!!</p>;
+      // }
+
+      // //表示するJSX
+      // let el = (
+      //   <div>
+      //     <Welcome />
+      //   </div>
+      // );
+      // ReactDOM.render(el, dom);
+
+      // =====================
+      // 引数にpropsを受け取るコンポーネント
+      // =====================
+      const msg1 = {
+        fontSize: '20px',
+        color: 'red',
+      };
+      const msg2 = {
+        fontSize: '10px',
+        color: 'blue',
+      };
+
+      function Welcome(props) {
+        return <p style={props.style}>Hello {props.name}</p>;
+      }
+
+      let el = (
+        <div>
+          <Welcome style={msg1} name="KAZUKI" />
+          <Welcome style={msg2} name="KENTA" />
+        </div>
+      );
+      ReactDOM.render(el, dom);
+    </script>
+  </body>
+</html>
