@@ -44,16 +44,44 @@ import Rect01 from './Rect';
 // ========================
 //! ③別ファイルコンポーネント
 // ========================
-function App01(props) {
-  return (
-    <div className="App">
-      <h1>{props.title}</h1>
-      <Rect01 x="50" y="50" w="150" h="150" c="cyan" r="50" />
-      <Rect01 x="150" y="100" w="150" h="150" c="magenta" r="75" />
-      <Rect01 x="100" y="150" w="150" h="150" c="black" r="25" />
-    </div>
-  );
+// function App01(props) {
+//   return (
+//     <div className="App">
+//       <h1>{props.title}</h1>
+//       <Rect01 x="50" y="50" w="150" h="150" c="cyan" r="50" />
+//       <Rect01 x="150" y="100" w="150" h="150" c="magenta" r="75" />
+//       <Rect01 x="100" y="150" w="150" h="150" c="black" r="25" />
+//     </div>
+//   );
+// }
+
+// ========================
+//! ④ステート使用(class型コンポーネント)
+// ========================
+class AppState extends React.Component {
+  msgStyle = {
+    fontSize: '24px',
+    color: 'red',
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      mas: 'Hello State !!!!!!!',
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>React</h1>
+        <p style={this.msgStyle}>{this.state.mas}</p>
+        <p style={this.msgStyle}>{this.props.msg}</p>
+      </div>
+    );
+  }
 }
 
 // export default App;
-export default App01;
+// export default App01;
+export default AppState;
