@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import AppState from './App';
+
 import * as serviceWorker from './serviceWorker';
 
 let dom = document.getElementById('root');
 let el = (
   <React.StrictMode>
-    {/* <App title="Kenta" /> */}
-    <AppState msg="state Component" />
+    <App title="Kenta" msg="state" />
   </React.StrictMode>
 );
 
