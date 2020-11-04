@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
-import Memo from '../memo/memo';
-import AddForm from '../memo/AddForm';
-import FindForm from '../memo/FindForm';
-import DelForm from '../memo/DelForm';
+import Memo from './memo';
+import AddForm from './AddForm';
+import FindForm from './FindForm';
+import DelForm from './DelForm';
 
-class MemoApp extends React.Component {
+class MemoApp extends Component {
   td = {
     width: '250px',
   };

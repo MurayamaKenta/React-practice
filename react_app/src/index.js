@@ -4,10 +4,13 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 // import App from './components/App';
-// import ReduxApp from './components/redux_app'; //Redux
-import MemoApp from './components/MemoApp'; //Memo
-import MemoStore from './memo/store'; //Memo
+import ReduxApp from './components/redux_app'; //Redux
+// import MemoApp from './memo/MemoApp'; //Memo
+// import MemoStore from './memo/store'; //Memo
 // import Button from './components/Button';
+// import App from './App';
+import MemoStore from './memo02/Store';
+import App02 from './memo_app';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -30,6 +33,7 @@ let dom = document.getElementById('root');
 
 // //レデューザー
 // function counter(state = state_value, action) {
+//   console.log('reducer');
 //   switch (action.type) {
 //     case '増える':
 //       return {
@@ -67,7 +71,7 @@ let dom = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={MemoStore}>
-    <MemoApp />
+    <App02 />
   </Provider>,
   document.getElementById('root')
 );

@@ -5,6 +5,8 @@ import App from './App';
 
 //ステートのマッピング
 function mappingState(state) {
+  console.log('state');
+  console.log(state);
   return state;
 }
 
@@ -33,6 +35,8 @@ class Message extends Component {
     color: 'red',
   };
   render() {
+    console.log('message');
+    console.log(this.props);
     return (
       // ここのpropsはstoreの中の値
       //Message = connect(mappingState)(Message);のmappingStateでpropsを受け取ってるんだと思う
@@ -55,6 +59,9 @@ class Button extends Component {
   }
   //ボタンクリックでディスパッチを実行(shift押しながらクリック or クリック)
   doAction(e) {
+    console.log('action_button');
+    console.log(this.props);
+
     if (e.shiftKey) {
       this.props.dispatch({ type: '増える' });
     } else {
@@ -62,7 +69,12 @@ class Button extends Component {
     }
   }
   render() {
-    return <button onClick={this.doAction}>Click come on</button>;
+    return (
+      <div>
+        {/* <p>{this.props.message}</p> */}
+        <button onClick={this.doAction}>Click Come On:</button>
+      </div>
+    );
   }
 }
 //ストアのコネクト

@@ -19,11 +19,13 @@ class Item extends Component {
     let d = this.props.value.created;
     let f = `${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`;
     return (
-      <tr>
-        <th style={this.th}>NO, {this.props.index}</th>
-        <td style={this.td}>{this.props.value.message}</td>
-        <td style={this.td}>{this.date}</td>
-      </tr>
+      <div>
+        <tr>
+          <th style={this.th}>NO, {this.props.index}</th>
+          <td style={this.td}>{this.props.value.message}</td>
+          <td style={this.td}>{this.date}</td>
+        </tr>
+      </div>
     );
   }
 }
