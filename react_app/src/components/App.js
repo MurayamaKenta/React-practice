@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
-import Rect01 from './Rect';
+import '../App.css';
+import Rect01 from '../Rect';
 
 // ========================
 //!①シンプルコンポーネント作成
